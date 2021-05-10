@@ -30,7 +30,7 @@ app.use(session(
     resave: true, 
     saveUninitialized: true, 
     store: MongoStore.create({
-      mongoUrl: process.env.MONGODB_URI || "mongodb://localhost/dbNameHere",
+      mongoUrl: process.env.MONGODB_URI || "mongodb://localhost/dbMediMinder",
     })
   })
 );
@@ -39,7 +39,7 @@ app.use(passport.session());
 
 //Connecting to Mongoose with environment variables
 mongoose.connect(
-    process.env.MONGODB_URI || "mongodb://localhost/mend", 
+    process.env.MONGODB_URI || "mongodb://localhost/dbMediMinder", 
     {
         useNewUrlParser: true,
         useUnifiedTopology: true,
@@ -50,11 +50,11 @@ mongoose.connect(
 
 // Routes
 app.use(routes);
-
-app.get("*", (req,res) => {
-  res.sendFile(path.join(__dirname, "/client/build/index.html"))
-})
-
+if (process.env.NODE_ENV === "production") {
+  app.get("*", (req,res) => {
+    res.sendFile(path.join(__dirname, "/client/build/index.html"))
+  })
+}
 app.listen(PORT, () => {
   console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
 });

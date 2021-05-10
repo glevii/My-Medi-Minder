@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-d
 import SignUp from "./pages/signUp";
 import Login from "./pages/login";
 import Profile from "./pages/profile";
+import Questions from "./pages/questions";
 
 import './App.css';
 import api from "./utils/api";
@@ -32,7 +33,13 @@ function App() {
           <Route exact path ="/signup" component={SignUp} />
           <Route path = "/login" component={Login} />
           <Route path = "/profile">
-            { isLoggedIn ? <Profile /> : <Redirect to="/login" /> }
+            { isLoggedIn ? 
+             <Profile /> : <Redirect to="/login" /> }
+          </Route>
+
+          <Route path = "/questions">
+            { isLoggedIn ? 
+             <Questions /> : <Redirect to="/login" /> }
           </Route>
           <Route component={Login} />
         </Switch> 

@@ -15,4 +15,13 @@ export default {
     logout: () => {
       return axios.get('/api/user/logout')
     },
+    createMed: (medData) => {
+      return axios.post('/api/med', medData)
+    },
+    findAllMeds: () => {
+      return axios.get('/api/med')
+    },
+    findMedByID: (id) => {
+      return axios.get('/api/med/' + id)
+    }
 } 
