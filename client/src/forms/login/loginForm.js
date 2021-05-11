@@ -42,13 +42,12 @@ function LoginForm() {
             <section id="home" className="main-banner parallaxie" >
                 <div className="heading">
                     <h1>Welcome to My Medi-Tracker</h1>
-                    <h3 className="cd-headline clip is-full-width">
-                        <span>Lorem Ipsum Dolor Sit Amet </span>
-                        <div className="btn-ber">
+                    {/* <h3 className="cd-headline clip is-full-width"> */}
+                        {/* <div className="btn-ber">
                             <a className="get_btn hvr-bounce-to-top" href="#">Get started</a>
                             <a className="learn_btn hvr-bounce-to-top" href="#">Learn More</a>
-                        </div>
-                    </h3>
+                        </div> */}
+                    {/* </h3> */}
                 </div>
             </section>
 
@@ -56,7 +55,6 @@ function LoginForm() {
             <div className="container login">
                 <div className="row">
                     <div className="col-md-6 col-md-offset-3">
-                        <h2>Login Form</h2>
                         <form className="login" onSubmit={handleFormSubmit}>
                             <div className="form-group">
                                 <label htmlFor="exampleInputEmail1">Email</label>
@@ -76,7 +74,9 @@ function LoginForm() {
                                     className="form-control"
                                     placeholder="Password" />
                             </div>
-                            <button type="submit" className="btn btn-default">Login</button>
+                            <div className="btn-ber">
+                                <button type="submit" className="get_btn">Login</button>
+                            </div>
                         </form>
                         <h3>Not a member? <a href="/signup">Sign up here</a></h3>
                     </div>

@@ -38,13 +38,9 @@ export default function Questions() {
 	const [showScore, setShowScore] = useState(false);
 	const [score, setScore] = useState(0);
 	const [medState, setMedState] = useState({
-		medTypeQuestion: "",
 		medType: "",
-		freqQuestion: "",
 		frequencyTaken: "",
-		endDateQuestion: "",
 		endDate: "",
-		numberPerDayQuestion: "",
 		numberPerDay: ""
 	})
 
@@ -88,43 +84,29 @@ export default function Questions() {
 									className="form-control medType"
 									placeholder="Enter the name of your medication*" />
 							</div>
-							<div className="mb-3 form-check" onChange={handleInputChange}>
+							<div className="mb-3" onChange={handleInputChange}>
 								<label for="exampleInputPassword1" className="freqQuestion">How often do you need to take your medication?</label>
-									
-									<input className="form-check-input" type="radio" name="frequencyTaken" value="daily" />
-											Daily 
-									<input class="form-check-input" type="radio" name="frequencyTaken" value="everySecondDay" />
-											Every second day 
-
-									<input class="form-check-input" type="radio" name="frequencyTaken" value="weekly" />
-											Weekly
-
-									<input class="form-check-input" type="radio" name="frequencyTaken" value="fortnightly" />
-											Fortnightly
+								<div><input className="form-check-input " type="radio" name="frequencyTaken" value="daily" />Daily</div>
+								<div><input class="form-check-input" type="radio" name="frequencyTaken" value="everySecondDay" />Every Second Day</div>
+								<div><input class="form-check-input" type="radio" name="frequencyTaken" value="weekly" /> Weekly</div>
+								<div><input class="form-check-input" type="radio" name="frequencyTaken" value="fortnightly" />Fortnightly</div>
+							</div>
 
 							<div class="mb-3">
 								<label for="exampleInputEmail1" className="endDateQuestion">On which date will you complete your course of medication?</label>
 								<Datepicker endDate={medState.endDate} handleInputChange={handleInputChange} />
 							</div>
 							<div className="mb-3" onChange={handleInputChange}>
-								<label for="exampleInputPassword1" className="form-check-input">How many times a day do you need to take your medication?</label>
-									<input className="form-check-input" type="radio" name="frequencyTaken" value="1" />
-											1 
-									<input class="form-check-input" type="radio" name="frequencyTaken" value="2" />
-											2 
-
-									<input class="form-check-input" type="radio" name="frequencyTaken" value="3" />
-											3
-
-									<input class="form-check-input" type="radio" name="frequencyTaken" value="4" />
-											4
-							</div>
+								<label for="exampleInputPassword1" className="freqQuestion">How often do you need to take your medication?</label>
+								<div><input className="form-check-input " type="radio" name="numberPerDay" value="1" />1</div>
+								<div><input class="form-check-input" type="radio" name="numberPerDay" value="2" />2</div>
+								<div><input class="form-check-input" type="radio" name="numberPerDay" value="3" /> 3</div>
+								<div><input class="form-check-input" type="radio" name="numberPerDay" value="4" />4</div>
 							</div>
 
-
-						<button type="submit" className="btn btn-primary">Submit</button>
+							<button type="submit" className="btn btn-primary">Submit</button>
 						</form>
-						</div>
+					</div>
 				</div>
 			</div>
 		</div>
