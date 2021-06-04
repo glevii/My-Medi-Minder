@@ -5,7 +5,7 @@ const Schema = mongoose.Schema;
 const MedSchema = new Schema({
     medType: {
         type: String,
-        trim: true,
+        index: true,
         required: true
     },
     frequencyTaken: {

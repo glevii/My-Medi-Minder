@@ -49,7 +49,8 @@ export default function Questions() {
 		const { name, value } = event.target
 		setMedState({ ...medState, [name]: value })
 	}
-	const handleSaveMed = () => {
+	const handleSaveMed = (e) => {
+		e.preventDefault();
 		console.log("MedState = ", medState)
 		api.createMed(medState).then(results => {
 			console.log(results)
@@ -79,9 +80,9 @@ export default function Questions() {
 								<label for="exampleInputEmail1" className="medTypeQuestion">What is the name of your medication?</label>
 								<input
 									onChange={handleInputChange}
-									name="medName"
+									name="medType"
 									type="text"
-									className="form-control medType"
+									className="form-control"
 									placeholder="Enter the name of your medication*" />
 							</div>
 							<div className="mb-3" onChange={handleInputChange}>
@@ -112,3 +113,4 @@ export default function Questions() {
 		</div>
 	);
 }
+
